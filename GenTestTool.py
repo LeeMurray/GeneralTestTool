@@ -5,8 +5,8 @@ import pyperclip
 
 root = tk.Tk()
 root.title("GenTestTool")
-root.iconbitmap('Skull Logo.ico')
-root.config(background="#355c7d")
+#root.iconbitmap('Skull Logo.ico')
+#root.config(background="#355c7d")
 frame = tk.Frame(root)
 frame.configure(background='#355c7d', width=200)
 frame.pack()
