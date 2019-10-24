@@ -1,14 +1,16 @@
 import tkinter as tk
+from tkinter import simpledialog
 import uuid
 import names
 import pyperclip
+import random
+import string
 
 root = tk.Tk()
 root.title("GenTestTool")
-#root.iconbitmap('Skull Logo.ico')
-#root.config(background="#355c7d")
+root.grid()
 frame = tk.Frame(root)
-frame.configure(background='#355c7d', width=200)
+frame.configure(background='#355c7d', width=400)
 frame.pack()
 
 
@@ -43,22 +45,36 @@ def female_full_name():
     pyperclip.copy(f_full_name)
 
 
-GUIDGen = tk.Button(frame, bg="#f8b195", text="GUIDGenerator", command=guid_generator)
-GUIDGen.pack(fill=tk.X, padx=10, pady=10, ipadx=10, ipady=10)
+def string_generator():
+    i = simpledialog.askinteger(title="Number", prompt="Enter the number of characters you need : ")
+    t = ''.join(random.choice(string.ascii_lowercase) for x in range(i))
+    pyperclip.copy(t)
 
-MaleFirstName = tk.Button(frame, bg="#f67280", text="Male First Name Generator", command=male_first_name)
-MaleFirstName.pack(fill=tk.X, padx=10, pady=10, ipadx=10, ipady=10)
 
-FemaleFirstName = tk.Button(frame, bg="#f67280", text="Female First Name Generator", command=female_first_name)
-FemaleFirstName.pack(fill=tk.X, padx=10, pady=10, ipadx=10, ipady=10)
+GUIDGen = tk.Button(frame, bg="#f8b195", text="GUIDGenerator", command=guid_generator, padx=10, pady=10, width=50)
+GUIDGen.grid(row=0, column=0, columnspan=2, rowspan=2)
 
-LastName = tk.Button(frame, bg="#c06c84", text="Last Name Generator", command=last_name)
-LastName.pack(fill=tk.X, padx=10, pady=10, ipadx=10, ipady=10)
+MaleFirstName = tk.Button(frame, bg="#f67280", text="Male First Name Generator", command=male_first_name, padx=10,
+                          pady=10, width=47)
+MaleFirstName.grid(row=2, column=0, columnspan=2, rowspan=2, ipadx=10, ipady=6)
 
-MaleFullName = tk.Button(frame, bg="#6c5b7b", text="Male Full Name Generator", command=male_full_name)
-MaleFullName.pack(side=tk.LEFT, fill=tk.X, padx=10, pady=10, ipadx=10, ipady=10)
+FemaleFirstName = tk.Button(frame, bg="#f67280", text="Female First Name Generator", command=female_first_name, padx=10,
+                            pady=10, width=50)
+FemaleFirstName.grid(row=4, column=0, columnspan=2, rowspan=2)
 
-FemaleFullName = tk.Button(frame, bg="#6c5b7b", text="Female Full Name Generator", command=female_full_name)
-FemaleFullName.pack(side=tk.LEFT, fill=tk.X, padx=10, pady=10, ipadx=10, ipady=10)
+LastName = tk.Button(frame, bg="#c06c84", text="Last Name Generator", command=last_name, padx=10, pady=10, width=50)
+LastName.grid(row=6, column=0, columnspan=2, rowspan=2)
+
+MaleFullName = tk.Button(frame, bg="#6c5b7b", text="Male Full Name Generator", command=male_full_name, padx=10,
+                         pady=10, width=23)
+MaleFullName.grid(row=8, column=0, columnspan=1, rowspan=2)
+
+FemaleFullName = tk.Button(frame, bg="#6c5b7b", text="Female Full Name Generator", command=female_full_name, padx=10,
+                           pady=10, width=23)
+FemaleFullName.grid(row=8, column=1, columnspan=1, rowspan=2)
+
+String = tk.Button(frame, bg="#355c7d", text="String Generator", command=string_generator, padx=10, pady=10, width=50)
+String.grid(row=10, column=0, columnspan=2, rowspan=2)
+
 
 root.mainloop()
