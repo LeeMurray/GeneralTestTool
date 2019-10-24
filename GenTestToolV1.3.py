@@ -33,7 +33,7 @@ FemaleFullName = tk.Button(frame, bg="#6c5b7b", text="Female Full Name Generator
                            pady=10, width=23)
 FemaleFullName.grid(row=8, column=1, columnspan=1, rowspan=2)
 
-String = tk.Button(frame, bg="#355c7d", text="String Generator", command=StringGen.string_generator, padx=10, pady=10, width=50)
+String = tk.Button(frame, bg="#355c7d", text="String Generator", command=StringGen.ipsum_string, padx=10, pady=10, width=50)
 String.grid(row=10, column=0, columnspan=2, rowspan=2)
 
 
