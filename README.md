@@ -8,3 +8,4 @@ Exe is in the Output file and can be ran independently however code uploaded for
 - **GUIDGen** : You will be able to generate unique GUID's which can be used for many thing
 - **NameGen** : This is name generator for male and female name data creating fist, last name and full name strings
 - **StringGen** : This creates a Ipsum style paragraph and then cuts it down to the length required for testing.
+- **TinyURLGen** : Create TinyUrls
