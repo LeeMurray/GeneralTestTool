@@ -4,6 +4,7 @@ from bin import GuidGen, NameGen, StringGen, TinyUrlGen
 root = tk.Tk()
 root.title("GenTestTool")
 root.grid()
+root.iconbitmap(r'C:\Users\lmurray\PycharmProjects\GeneralTestTool\img\NewLogo.ico')
 frame = tk.Frame(root)
 frame.configure(background='#355c7d', width=400)
 frame.pack()
