@@ -7,7 +7,7 @@ import lorem
 
 def ipsum_string():
     d = simpledialog.askinteger(title="number", prompt="Enter Number : ")
-    c = str(lorem.paragraph())
+    c = str(lorem.paragraph()) * 10
 
     if d > len(c):
         messagebox.showinfo("Error", "Request Too Long. Paragraph is only " + str(len(c)) + " characters long. Please try again.")
