@@ -1,0 +1,16 @@
+from tkinter import simpledialog
+from faker import Factory
+fake = Faker()
+
+def data_gen():
+    d = simpledialog.askinteger(title="number", prompt="Enter Number of Records Required: ")
+
+    print ("username,first_name,last_name,email,position,country,last_access_from_ip,mac_address")
+
+    for x in range(d):
+            print(fake.sl .slug() + "," + fake.first_name() + "," + fake.last_name() + "," + fake.company_email() + "," + fake.job() + "," + fake.country() + "," + fake.ipv4() + "," +
+fake.mac_address())
+
+    if __name__ == "__main__":
+        fake = Factory.create()
+        create_names(fake)
