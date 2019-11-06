@@ -1,8 +1,6 @@
 import random
 import pyperclip
-import datetime
 from bin import Message
-from dateutil.relativedelta import relativedelta
 import datetime
 
 
