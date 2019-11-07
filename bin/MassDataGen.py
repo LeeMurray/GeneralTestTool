@@ -1,7 +1,5 @@
 import csv
 from tkinter import simpledialog
-from tkinter import messagebox
-from time import time
 from faker import Faker
 from bin import DOBGen
 from bin import Message
@@ -12,7 +10,7 @@ fake = Faker()
 def create_csv_file():
     record_count = simpledialog.askinteger(title="number", prompt="Enter Number : ")
     with open('./files/Data.csv', 'w', newline='') as csvfile:
-        fieldnames = ['first_name', 'last_name', 'DOB', 'email', 'address', 'city', 'state']
+        fieldnames = ['first_name', 'last_name', 'DOB', 'email', 'address', 'city', 'postcode']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
         writer.writeheader()
@@ -23,15 +21,15 @@ def create_csv_file():
                     'last_name': fake.name(),
                     'DOB': DOBGen.get_date(),
                     'email': fake.email(),
-                    'address': fake.street_address(),
+                    'address': str(fake.building_number() + " " + fake.street_name()),
                     'city': fake.city(),
-                    'state': fake.state(),
+                    'postcode': fake.postcode(),
                 }
             )
 
     Message.process_complete()
 
-
+'''
 def get_totals():
     qty_total = 0
     amount_total = 0
@@ -60,4 +58,5 @@ if __name__ == '__main__':
 
     messagebox.showinfo("Info", "qty: {}".format(elapsed))
     messagebox.showinfo("Info", "amount: {}".format(elapsed))
+    '''
 
