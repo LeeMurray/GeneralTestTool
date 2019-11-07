@@ -1,5 +1,5 @@
 import tkinter as tk
-from bin import GuidGen, NameGen, StringGen, TinyUrlGen, DOBGen
+from bin import GuidGen, NameGen, StringGen, TinyUrlGen, DOBGen, MassDataGen
 
 root = tk.Tk()
 root.title("GenTestTool")
@@ -45,6 +45,10 @@ String.grid(row=10, column=0, columnspan=2, rowspan=2)
 UrlGen = tk.Button(frame, bg="#f67280", text="TinyURL Generator", command=TinyUrlGen.tiny_url_gen, padx=10, pady=10,
                    width=50)
 UrlGen.grid(row=12, column=0, columnspan=2, rowspan=2)
+
+MassGen = tk.Button(frame, bg="#c06c84", text="MassData Generator", command=MassDataGen.create_csv_file, padx=10,
+                    pady=10, width=50)
+MassGen.grid(row=14, column=0, columnspan=2, rowspan=2)
 
 
 root.mainloop()
