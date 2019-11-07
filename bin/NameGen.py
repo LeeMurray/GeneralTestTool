@@ -21,6 +21,11 @@ def last_name():
     Message.complete()
 
 
+def mass_last_name():
+    lst_name = names.get_last_name()
+    return lst_name
+
+
 def male_full_name():
     m_full_name = names.get_full_name(gender='male')
     pyperclip.copy(m_full_name)

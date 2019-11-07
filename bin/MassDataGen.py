@@ -1,7 +1,7 @@
 import csv
 from tkinter import simpledialog
 from faker import Faker
-from bin import DOBGen
+from bin import DOBGen, NameGen
 from bin import Message
 
 fake = Faker()
@@ -18,8 +18,8 @@ def create_csv_file():
             writer.writerow(
                 {
                     'first_name': fake.name(),
-                    'last_name': fake.name(),
-                    'DOB': DOBGen.get_date(),
+                    'last_name': NameGen.last_name(),
+                    'DOB': DOBGen.mass_get_date(),
                     'email': fake.email(),
                     'address': str(fake.building_number() + " " + fake.street_name()),
                     'city': fake.city(),
